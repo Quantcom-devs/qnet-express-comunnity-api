@@ -1,0 +1,4 @@
+
+interface IRole {
+    name: string
+}

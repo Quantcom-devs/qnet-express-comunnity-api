@@ -1,0 +1,4 @@
+
+interface IResource {
+    resource: string;
+}
