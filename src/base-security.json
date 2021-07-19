@@ -1,0 +1,98 @@
+{
+	"roles": ["user", "manager", "admin"],
+	"resources": ["users", "roles", "permissions", "resources"],
+	"permissions": {
+		"users": [
+			{
+				"role": "user",
+				"create": false,
+				"read": "ANY",
+				"write": "OWN",
+				"delete": "OWN"
+			},
+			{
+				"role": "manager",
+				"create": false,
+				"read": "ANY",
+				"write": "ANY",
+				"delete": "OWN"
+			},
+			{
+				"role": "admin",
+				"create": false,
+				"read": "ANY",
+				"write": "ANY",
+				"delete": "ANY"
+			}
+		],
+		"roles": [
+			{
+				"role": "user",
+				"create": false,
+				"read": "OWN",
+				"write": "NONE",
+				"delete": "NONE"
+			},
+			{
+				"role": "manager",
+				"create": false,
+				"read": "ANY",
+				"write": "NONE",
+				"delete": "NONE"
+			},
+			{
+				"role": "admin",
+				"create": true,
+				"read": "ANY",
+				"write": "ANY",
+				"delete": "ANY"
+			}
+		],
+		"permissions": [
+			{
+				"role": "user",
+				"create": false,
+				"read": "OWN",
+				"write": "NONE",
+				"delete": "NONE"
+			},
+			{
+				"role": "manager",
+				"create": false,
+				"read": "ANY",
+				"write": "NONE",
+				"delete": "NONE"
+			},
+			{
+				"role": "admin",
+				"create": true,
+				"read": "ANY",
+				"write": "ANY",
+				"delete": "ANY"
+			}
+		],
+		"resources": [
+			{
+				"role": "user",
+				"create": false,
+				"read": "ANY",
+				"write": "NONE",
+				"delete": "NONE"
+			},
+			{
+				"role": "manager",
+				"create": false,
+				"read": "ANY",
+				"write": "ANY",
+				"delete": "NONE"
+			},
+			{
+				"role": "admin",
+				"create": true,
+				"read": "ANY",
+				"write": "ANY",
+				"delete": "ANY"
+			}
+		]
+	}
+}

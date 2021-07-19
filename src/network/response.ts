@@ -1,13 +1,13 @@
-import { Request, Response } from 'express';
+import { Response } from 'express';
 
-export function SUCCESS_RESPONSE( res: Response, message: any, code = 200) {
+export function SUCCESS_RESPONSE(res: Response, message: unknown, code = 200): Response {
 	return res.status(code).json({
 		error: '',
 		message
 	});
 }
 
-export function ERROR_RESPONSE(res: Response, error: any, code = 400) {
+export function ERROR_RESPONSE(res: Response, error: unknown, code = 400): Response {
 	return res.status(code).json({
 		error,
 		message: ''
