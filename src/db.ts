@@ -1,5 +1,7 @@
 import db from 'mongoose';
 import Logger from './lib/logger';
+import initAuth from './lib/initAuth';
+
 
 export async function connectToDb(uri: string): Promise<void> {
 
@@ -10,6 +12,7 @@ export async function connectToDb(uri: string): Promise<void> {
 			useCreateIndex: true,
 			useFindAndModify: false
 		});
+		Logger.info('[DB] Connected and ready to use!');
 
 	} catch (error) {
 		Logger.error('[DB] Error connecting to the database');
@@ -17,6 +20,9 @@ export async function connectToDb(uri: string): Promise<void> {
 		throw new Error('Unable to connect to database');
 	}
 
-	Logger.info('[DB] Connected and ready to use!');
+	Logger.info('Auth initialization starting...');
+	await initAuth();
+	Logger.info('Auth initialization finished');
+
 }
 

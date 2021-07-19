@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import { Error } from 'mongoose';
 import Logger from '../lib/logger';
 import { ERROR_RESPONSE } from '../network/response';
@@ -32,7 +32,7 @@ function handleDuplicateKeyError(err: any, res: Response) {
 }
 
 function handleValidationError(err: Error.ValidationError, res: Response) {
-	const errors = Object.values(err.errors as object).map((el) => el.message);
+	const errors = Object.values(err.errors).map((el) => el.message);
 	const fields = Object.values(err.errors as object).map(el => el.path);
 
 	if (errors.length > 1) {
